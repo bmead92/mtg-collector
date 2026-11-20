@@ -1,0 +1,3021 @@
+{
+"note": "Trimmed Scryfall printings of Sol Ring (unique=prints) for tests, 2026-11-18",
+"data": [
+{
+"id": "fc817e07-c1f3-469f-9cf7-0945dea7400f",
+"name": "Sol Ring",
+"lang": "en",
+"set": "trc",
+"set_name": "Star Trek Commander",
+"collector_number": "499",
+"released_at": "2026-11-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "8ee443cc-e17a-493b-9c93-1f9e141a30e4",
+"name": "Sol Ring",
+"lang": "en",
+"set": "frc",
+"set_name": "Reality Fracture Commander",
+"collector_number": "21",
+"released_at": "2026-10-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "91fdb56b-54d5-4272-8319-505ff987fe9b",
+"name": "Sol Ring",
+"lang": "en",
+"set": "msc",
+"set_name": "Marvel Super Heroes Commander",
+"collector_number": "211",
+"released_at": "2026-06-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "5bef0790-aa1b-4144-8391-338e59e86115",
+"name": "Sol Ring",
+"lang": "en",
+"set": "msc",
+"set_name": "Marvel Super Heroes Commander",
+"collector_number": "212",
+"released_at": "2026-06-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "a7fc546e-7e3c-436d-a0b9-9ac3548ec344",
+"name": "Sol Ring",
+"lang": "en",
+"set": "msc",
+"set_name": "Marvel Super Heroes Commander",
+"collector_number": "213",
+"released_at": "2026-06-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "a739dd30-1fce-49db-99fb-15e346f4f2db",
+"name": "Sol Ring",
+"lang": "en",
+"set": "msc",
+"set_name": "Marvel Super Heroes Commander",
+"collector_number": "214",
+"released_at": "2026-06-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "870ec754-a76c-40ea-9b81-81b3dca1f62c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "soc",
+"set_name": "Secrets of Strixhaven Commander",
+"collector_number": "128",
+"released_at": "2026-04-24",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "14dbce79-1fcc-4cc9-bf38-7729e44a411e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "tmc",
+"set_name": "Teenage Mutant Ninja Turtles Eternal",
+"collector_number": "59",
+"released_at": "2026-03-06",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "04002706-2236-4b79-bdea-4f263e43cb9c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "ecc",
+"set_name": "Lorwyn Eclipsed Commander",
+"collector_number": "57",
+"released_at": "2026-01-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "0d38ff41-a60c-4d70-92e4-4d3d3ab073a3",
+"name": "Sol Ring",
+"lang": "en",
+"set": "ecc",
+"set_name": "Lorwyn Eclipsed Commander",
+"collector_number": "58",
+"released_at": "2026-01-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "ee6e5a35-fe21-4dee-b0ef-a8f2841511ad",
+"name": "Sol Ring",
+"lang": "en",
+"set": "eoc",
+"set_name": "Edge of Eternities Commander",
+"collector_number": "57",
+"released_at": "2025-08-01",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "7b0ccfd4-f118-4497-9c5a-54cf12000e16",
+"name": "Sol Ring",
+"lang": "en",
+"set": "tdc",
+"set_name": "Tarkir: Dragonstorm Commander",
+"collector_number": "106",
+"released_at": "2025-04-11",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "82f1a8a3-7fdb-49a3-9649-b5c0b4755cd5",
+"name": "Sol Ring",
+"lang": "en",
+"set": "dsc",
+"set_name": "Duskmourn: House of Horror Commander",
+"collector_number": "94",
+"released_at": "2024-09-27",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "6c5c9437-3d99-4a7c-8255-9acdcb1acc40",
+"name": "Sol Ring",
+"lang": "en",
+"set": "otc",
+"set_name": "Outlaws of Thunder Junction Commander",
+"collector_number": "267",
+"released_at": "2024-04-19",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "d9e098aa-a886-430e-8f11-78fb6f2d8ada",
+"name": "Sol Ring",
+"lang": "en",
+"set": "mkc",
+"set_name": "Murders at Karlov Manor Commander",
+"collector_number": "237",
+"released_at": "2024-02-09",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "2d47121d-8b90-4d28-9ffa-0a640b9dd611",
+"name": "Sol Ring",
+"lang": "en",
+"set": "lcc",
+"set_name": "The Lost Caverns of Ixalan Commander",
+"collector_number": "313",
+"released_at": "2023-11-17",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "46ca0b66-a000-4483-b916-f5b89e710244",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cmm",
+"set_name": "Commander Masters",
+"collector_number": "410",
+"released_at": "2023-08-04",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "eca9ae7b-a6d9-43ea-92d4-0110fd6643a7",
+"name": "Sol Ring",
+"lang": "en",
+"set": "moc",
+"set_name": "March of the Machine Commander",
+"collector_number": "381",
+"released_at": "2023-04-21",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "beebe533-29b9-4041-ab66-0a8233c50d56",
+"name": "Sol Ring",
+"lang": "en",
+"set": "dmc",
+"set_name": "Dominaria United Commander",
+"collector_number": "190",
+"released_at": "2022-09-09",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "199cde21-5bc3-49cd-acd4-bae3af6e5881",
+"name": "Sol Ring",
+"lang": "en",
+"set": "clb",
+"set_name": "Commander Legends: Battle for Baldur's Gate",
+"collector_number": "871",
+"released_at": "2022-06-10",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "e1187999-521d-4ed0-8673-6eb8f3c58bb8",
+"name": "Sol Ring",
+"lang": "en",
+"set": "ncc",
+"set_name": "New Capenna Commander",
+"collector_number": "379",
+"released_at": "2022-04-29",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "3917f744-b876-47ae-94ad-f72b215ff1e7",
+"name": "Sol Ring",
+"lang": "en",
+"set": "nec",
+"set_name": "Neon Dynasty Commander",
+"collector_number": "161",
+"released_at": "2022-02-18",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "acce65cc-9093-45a6-8c86-97edce545050",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cc2",
+"set_name": "Commander Collection: Black",
+"collector_number": "7",
+"released_at": "2022-01-28",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "ca57eebe-5bc9-4cff-ae91-ccd509aa36ce",
+"name": "Sol Ring",
+"lang": "en",
+"set": "voc",
+"set_name": "Crimson Vow Commander",
+"collector_number": "168",
+"released_at": "2021-11-19",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "c46138f0-224a-4ca9-bf03-badb2ae5ee21",
+"name": "Sol Ring",
+"lang": "en",
+"set": "mic",
+"set_name": "Midnight Hunt Commander",
+"collector_number": "162",
+"released_at": "2021-09-24",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "2c52c96d-e20f-4025-b759-674b36cf0db3",
+"name": "Sol Ring",
+"lang": "en",
+"set": "afc",
+"set_name": "Forgotten Realms Commander",
+"collector_number": "215",
+"released_at": "2021-07-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "4cbc6901-6a4a-4d0a-83ea-7eefa3b35021",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c21",
+"set_name": "Commander 2021",
+"collector_number": "263",
+"released_at": "2021-04-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "0afa0e33-4804-4b00-b625-c2d6b61090fc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "khc",
+"set_name": "Kaldheim Commander",
+"collector_number": "104",
+"released_at": "2021-02-05",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "4d76d52c-7dd0-4d00-af84-fedae29590db",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cc1",
+"set_name": "Commander Collection: Green",
+"collector_number": "7",
+"released_at": "2020-12-04",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "58b26011-e103-45c4-a253-900f4e6b2eeb",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cmr",
+"set_name": "Commander Legends",
+"collector_number": "472",
+"released_at": "2020-11-20",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "8a5edac3-855a-4820-b913-44de5b29b7d0",
+"name": "Sol Ring",
+"lang": "en",
+"set": "znc",
+"set_name": "Zendikar Rising Commander",
+"collector_number": "120",
+"released_at": "2020-09-25",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "286bea73-8ad8-4423-8a7c-8497420fdb54",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c20",
+"set_name": "Commander 2020",
+"collector_number": "252",
+"released_at": "2020-04-17",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "e672d408-997c-4a19-810a-3da8411eecf2",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c19",
+"set_name": "Commander 2019",
+"collector_number": "221",
+"released_at": "2019-08-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "83a0f2eb-2f6d-4aaa-b7a9-ea06d5de7eca",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c18",
+"set_name": "Commander 2018",
+"collector_number": "222",
+"released_at": "2018-08-10",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "f9a32f17-49c4-4654-a087-1ba474f37377",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cm2",
+"set_name": "Commander Anthology Volume II",
+"collector_number": "217",
+"released_at": "2018-06-08",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "c6399a22-cebf-4c1d-a23e-4c68f784ac1b",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c17",
+"set_name": "Commander 2017",
+"collector_number": "223",
+"released_at": "2017-08-25",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "f48f7190-9ee3-477f-8b25-91e8c2916624",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cma",
+"set_name": "Commander Anthology",
+"collector_number": "231",
+"released_at": "2017-06-09",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "0f003fde-be17-4159-a361-711ed0bee911",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c16",
+"set_name": "Commander 2016",
+"collector_number": "272",
+"released_at": "2016-11-11",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "3459b229-7c46-4f70-87d4-bb31c2c17dd9",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c15",
+"set_name": "Commander 2015",
+"collector_number": "268",
+"released_at": "2015-11-13",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "b79cb394-eb91-4b3b-91d4-c6a0f723feb1",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c14",
+"set_name": "Commander 2014",
+"collector_number": "270",
+"released_at": "2014-11-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "842c3df8-43c9-4555-901c-67cdbfd26348",
+"name": "Sol Ring",
+"lang": "en",
+"set": "vma",
+"set_name": "Vintage Masters",
+"collector_number": "283",
+"released_at": "2014-06-16",
+"digital": true,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "1b59533a-3e38-495d-873e-2f89fbd08494",
+"name": "Sol Ring",
+"lang": "en",
+"set": "c13",
+"set_name": "Commander 2013",
+"collector_number": "259",
+"released_at": "2013-11-01",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2003",
+"full_art": false
+},
+{
+"id": "71357a3d-9a9f-4ec6-8e01-1966b220206c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cmd",
+"set_name": "Commander 2011",
+"collector_number": "261",
+"released_at": "2011-06-17",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2003",
+"full_art": false
+},
+{
+"id": "f2301532-a61f-4038-b771-6c34b6505b09",
+"name": "Sol Ring",
+"lang": "en",
+"set": "me4",
+"set_name": "Masters Edition IV",
+"collector_number": "227",
+"released_at": "2011-01-10",
+"digital": true,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "1997",
+"full_art": false
+},
+{
+"id": "9138d11a-d55f-4c46-bb27-7e8e15a44e8c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sum",
+"set_name": "Summer Magic / Edgar",
+"collector_number": "274",
+"released_at": "1994-06-21",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "white",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "803fd65f-4ca6-4fe4-abc2-72aa32ebb3a5",
+"name": "Sol Ring",
+"lang": "en",
+"set": "3ed",
+"set_name": "Revised Edition",
+"collector_number": "274",
+"released_at": "1994-04-11",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "white",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "e07f656c-97b5-4147-821a-edbb49f34e19",
+"name": "Sol Ring",
+"lang": "en",
+"set": "2ed",
+"set_name": "Unlimited Edition",
+"collector_number": "270",
+"released_at": "1993-12-01",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "white",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "c0fb91ec-20a8-4c13-9469-18885b1ecca3",
+"name": "Sol Ring",
+"lang": "en",
+"set": "leb",
+"set_name": "Limited Edition Beta",
+"collector_number": "270",
+"released_at": "1993-10-04",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "c4300d24-1cae-4dd5-be7e-38cc677cf5bd",
+"name": "Sol Ring",
+"lang": "en",
+"set": "lea",
+"set_name": "Limited Edition Alpha",
+"collector_number": "269",
+"released_at": "1993-08-05",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "4f152dd9-2b35-45b2-90fe-8c71d0634226",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fdc",
+"set_name": "Foundations Commander",
+"collector_number": "286",
+"released_at": "2026-10-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "bf6b187e-5ad0-4731-9c39-638451ac1e30",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2132",
+"released_at": "2026-09-28",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "8670dac4-d369-4907-ae3a-d58ff204f1a6",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2783",
+"released_at": "2026-09-14",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": true,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "0ab38fe7-1929-44f6-b4ce-ce8cfacbfb76",
+"name": "Sol Ring",
+"lang": "en",
+"set": "slz",
+"set_name": "The Zeta Set",
+"collector_number": "114",
+"released_at": "2026-09-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": true
+},
+{
+"id": "47466c75-726e-46a8-9a5c-b94dbe5b2f9a",
+"name": "Sol Ring",
+"lang": "en",
+"set": "slz",
+"set_name": "The Zeta Set",
+"collector_number": "235",
+"released_at": "2026-09-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": true
+},
+{
+"id": "cfd2a69b-3b11-41f8-931f-5d226b683206",
+"name": "Sol Ring",
+"lang": "en",
+"set": "slz",
+"set_name": "The Zeta Set",
+"collector_number": "356",
+"released_at": "2026-09-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": true
+},
+{
+"id": "24afe08b-6b88-42b3-a996-33f138431a87",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2560",
+"released_at": "2026-08-17",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "3b6a6593-b08f-4627-99a5-45d68f6e1c59",
+"name": "Sol Ring",
+"lang": "en",
+"set": "plst",
+"set_name": "The List",
+"collector_number": "BLC-129",
+"released_at": "2026-08-10",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "3d5c99e9-7c3e-4149-82a6-3c7d5d302488",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2807",
+"released_at": "2026-07-27",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "cadcddad-2f37-4a5c-81e4-242a20573952",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2683",
+"released_at": "2026-07-20",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "b68a8c69-0e59-4491-9e4d-4c50600a035e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2672",
+"released_at": "2026-06-15",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"full_art": true,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "2418af21-7be9-4dec-8be6-4d0bcf84a7ca",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2417",
+"released_at": "2026-05-18",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"boosterfun"
+]
+},
+{
+"id": "8ae6d023-2945-47f1-bc9f-f9c5ff9f5282",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2539",
+"released_at": "2026-04-27",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "9ef06694-e05d-4e96-a588-bd276447dcf8",
+"name": "Sol Ring",
+"lang": "en",
+"set": "soc",
+"set_name": "Secrets of Strixhaven Commander",
+"collector_number": "427",
+"released_at": "2026-04-24",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "3dd5ea51-68f7-4c12-a96b-8caca0d54640",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "IFIYW-5",
+"released_at": "2026-04-01",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "d75bfbe3-41a0-44e1-86ce-f56c9bcf57d7",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "IFIYW-10",
+"released_at": "2026-04-01",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"dazzlefoil",
+"universesbeyond"
+]
+},
+{
+"id": "8f69a74a-778c-4a1d-99ad-6ca04771fb23",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2467",
+"released_at": "2026-01-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "16a2c470-b2b8-4633-89b1-7b936bcaff8d",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "913",
+"released_at": "2025-12-01",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "c1f93f78-645b-4f21-a80b-5542f3328111",
+"name": "Sol Ring",
+"lang": "en",
+"set": "tle",
+"set_name": "Avatar: The Last Airbender Eternal",
+"collector_number": "316",
+"released_at": "2025-11-21",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"showcase"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "193a5688-9e9b-48f4-9904-53134ec73c97",
+"name": "Sol Ring",
+"lang": "en",
+"set": "slc",
+"set_name": "Secret Lair Countdown",
+"collector_number": "19",
+"released_at": "2025-11-03",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"full_art": true,
+"promo_types": [
+"poster"
+]
+},
+{
+"id": "2f4e1e26-95cc-45bd-90e9-3ae00f1708cf",
+"name": "Sol Ring",
+"lang": "en",
+"set": "slc",
+"set_name": "Secret Lair Countdown",
+"collector_number": "46",
+"released_at": "2025-11-03",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"full_art": true,
+"promo_types": [
+"halofoil",
+"poster"
+]
+},
+{
+"id": "ab696cab-2d83-444f-8068-dbf071c75de9",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "912",
+"released_at": "2025-10-27",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "835df088-5860-46b1-9c4d-3607d0293963",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2315",
+"released_at": "2025-10-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "9f4d9a0c-5a9a-4486-b8a0-942e73688fb4",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2330",
+"released_at": "2025-10-13",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond",
+"confettifoil"
+]
+},
+{
+"id": "180000d4-6844-4292-b768-b1f74a3b8b2d",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1988",
+"released_at": "2025-09-22",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "c5430a1d-a575-4853-93f2-635c327eea15",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1993",
+"released_at": "2025-09-22",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "f19a0013-ebf9-4472-a2ed-462c59d212a5",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2093",
+"released_at": "2025-07-14",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "d582b3c3-996e-4f4b-9efd-134e127d563c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "2063",
+"released_at": "2025-06-16",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "8fb860f9-3729-436e-adfb-c98c2a389d5d",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fic",
+"set_name": "Final Fantasy Commander",
+"collector_number": "356",
+"released_at": "2025-06-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"ffvi",
+"universesbeyond"
+]
+},
+{
+"id": "d105068a-d4f1-4971-b5a0-72806a798497",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fic",
+"set_name": "Final Fantasy Commander",
+"collector_number": "357",
+"released_at": "2025-06-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond",
+"ffvii"
+]
+},
+{
+"id": "9a34ac23-e318-4c0b-ab4c-e1eaa0e2547e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fic",
+"set_name": "Final Fantasy Commander",
+"collector_number": "358",
+"released_at": "2025-06-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"ffx",
+"universesbeyond"
+]
+},
+{
+"id": "1abcafa9-0f27-482f-95a9-24520f0106b8",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fic",
+"set_name": "Final Fantasy Commander",
+"collector_number": "359",
+"released_at": "2025-06-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"ffxiv",
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "74109c41-d1e7-4108-bed1-3d9110d5e7d2",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1905",
+"released_at": "2025-05-12",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"rainbowfoil"
+]
+},
+{
+"id": "fe202721-c5be-46de-9fb3-ac18c699e10d",
+"name": "Sol Ring",
+"lang": "en",
+"set": "drc",
+"set_name": "Aetherdrift Commander",
+"collector_number": "56",
+"released_at": "2025-02-14",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "c946b161-0e4f-4c0a-a075-cdcf05504d0b",
+"name": "Sol Ring",
+"lang": "en",
+"set": "drc",
+"set_name": "Aetherdrift Commander",
+"collector_number": "57",
+"released_at": "2025-02-14",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "3e10052f-b3e5-4a2c-b268-9a12ce354eb9",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "910",
+"released_at": "2025-02-10",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "b162b131-5612-4605-9de8-a5731eeac37e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1833",
+"released_at": "2024-12-02",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"rainbowfoil"
+]
+},
+{
+"id": "120e2b4b-afc7-4bf0-a09f-568e08f6bd8f",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pfdn",
+"set_name": "Foundations Promos",
+"collector_number": "1",
+"released_at": "2024-11-15",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"doublerainbow",
+"buyabox"
+]
+},
+{
+"id": "219210d3-263c-41c4-9211-0e59b2d4ccf3",
+"name": "Sol Ring",
+"lang": "en",
+"set": "fdc",
+"set_name": "Foundations Commander",
+"collector_number": "2",
+"released_at": "2024-11-15",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"startercollection"
+]
+},
+{
+"id": "2824f3fb-82e6-43bd-babf-da6777a5b075",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1734",
+"released_at": "2024-11-04",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "fff440c0-7e6a-46c2-9989-f1b5af20fd44",
+"name": "Sol Ring",
+"lang": "en",
+"set": "blc",
+"set_name": "Bloomburrow Commander",
+"collector_number": "129",
+"released_at": "2024-08-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "d1d8d32d-ebb2-46c2-b909-b7f71d33159e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "mb2",
+"set_name": "Mystery Booster 2",
+"collector_number": "233",
+"released_at": "2024-08-02",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "future",
+"full_art": false
+},
+{
+"id": "5b9fe249-9bda-462b-922c-f01c904c233a",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1664",
+"released_at": "2024-07-29",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "1997",
+"full_art": false
+},
+{
+"id": "65b145dd-8529-4bff-b381-b4be53f24b54",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1604",
+"released_at": "2024-06-24",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "19911e6e-7c35-4281-b31c-266382f052cc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "m3c",
+"set_name": "Modern Horizons 3 Commander",
+"collector_number": "305",
+"released_at": "2024-06-14",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"ripplefoil"
+]
+},
+{
+"id": "e675f7e2-5c9f-4912-8fdd-daaeda284a3d",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pip",
+"set_name": "Fallout",
+"collector_number": "239",
+"released_at": "2024-03-08",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "af88e4e8-b694-4ec0-8885-701ea30bf84c",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pip",
+"set_name": "Fallout",
+"collector_number": "359",
+"released_at": "2024-03-08",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "a8260eef-5ff2-4058-8aa5-469b402eaf65",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pip",
+"set_name": "Fallout",
+"collector_number": "767",
+"released_at": "2024-03-08",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "76cd916c-7464-4391-814b-09eac0d8d204",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pip",
+"set_name": "Fallout",
+"collector_number": "887",
+"released_at": "2024-03-08",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "7d698bdd-b485-409d-b03e-c7c7d3fe9a92",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1696",
+"released_at": "2024-02-26",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "858e0b83-7927-4e34-ae25-6ad7a787ad97",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1494",
+"released_at": "2023-12-06",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "21365def-bec7-4ec0-a1e9-34c85bf6c274",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1494★",
+"released_at": "2023-12-06",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false,
+"promo_types": [
+"galaxyfoil"
+]
+},
+{
+"id": "27ea0aa3-30c0-4eb4-b262-ce70781277ce",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1074",
+"released_at": "2023-11-06",
+"digital": false,
+"finishes": [
+"etched"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "1997",
+"full_art": false
+},
+{
+"id": "0f44a54b-512e-45ef-80ee-7982d2eaf762",
+"name": "Sol Ring",
+"lang": "en",
+"set": "who",
+"set_name": "Doctor Who",
+"collector_number": "245",
+"released_at": "2023-10-13",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "06be8262-4636-4a2c-a0c8-de741cf45aed",
+"name": "Sol Ring",
+"lang": "en",
+"set": "who",
+"set_name": "Doctor Who",
+"collector_number": "836",
+"released_at": "2023-10-13",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond",
+"boosterfun"
+]
+},
+{
+"id": "16fbbd8d-bb18-4a8b-95a4-30ad6d548f72",
+"name": "Sol Ring",
+"lang": "en",
+"set": "woc",
+"set_name": "Wilds of Eldraine Commander",
+"collector_number": "149",
+"released_at": "2023-09-08",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "7454e0cc-98c2-48a1-b2c9-49908d2aedcc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cmm",
+"set_name": "Commander Masters",
+"collector_number": "703",
+"released_at": "2023-08-04",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": true,
+"promo_types": [
+"boosterfun"
+]
+},
+{
+"id": "5805f64c-dd88-4e94-8f0a-a01dae67e3ba",
+"name": "Sol Ring",
+"lang": "en",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "284",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "7a8db21f-722b-4a07-985b-8d25a0b0006a",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "408",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "16089845-be81-4fc2-82a8-8a28ec7e20d4",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "408z",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"boosterfun",
+"serialized",
+"doublerainbow",
+"universesbeyond"
+]
+},
+{
+"id": "60bc8cfc-8f68-4ec7-92a7-98380d92f69e",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "409",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "9fac535f-46a3-440b-bb93-6fe4b2dba600",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "409z",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"boosterfun",
+"serialized",
+"doublerainbow",
+"universesbeyond"
+]
+},
+{
+"id": "13788423-db82-4e76-83ad-3f812a4d547a",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "410",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "ca15027f-0f32-4018-9da8-50e4002fa6f8",
+"name": "Sol Ring",
+"lang": "qya",
+"set": "ltc",
+"set_name": "Tales of Middle-earth Commander",
+"collector_number": "410z",
+"released_at": "2023-06-23",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"boosterfun",
+"serialized",
+"doublerainbow",
+"universesbeyond"
+]
+},
+{
+"id": "6d5b06e4-bbc8-405b-bc53-1380dba3696e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "plst",
+"set_name": "The List",
+"collector_number": "CMD-261",
+"released_at": "2023-05-08",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2003",
+"full_art": false
+},
+{
+"id": "c6721419-70aa-4137-98d5-98ef17720c8e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "onc",
+"set_name": "Phyrexia: All Will Be One Commander",
+"collector_number": "140",
+"released_at": "2023-02-10",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "1b023575-4cb5-434f-92ef-d3b81aaa3c3e",
+"name": "Sol Ring",
+"lang": "en",
+"set": "scd",
+"set_name": "Starter Commander Decks",
+"collector_number": "276",
+"released_at": "2022-12-02",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "772edef7-2f17-4244-b1bb-4e7a53c253e1",
+"name": "Sol Ring",
+"lang": "en",
+"set": "brc",
+"set_name": "The Brothers' War Commander",
+"collector_number": "160",
+"released_at": "2022-11-18",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "1997",
+"full_art": false
+},
+{
+"id": "33773feb-5b49-4d44-adca-93b99009acc0",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "249",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "40c825d3-004f-4dea-9d82-815617fb0a41",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "249★",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "508b2c62-a344-4897-a3a4-4f0555627fc1",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "250",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "6714ffab-5950-4cb7-9b25-d7423dda9ccc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "250★",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "ebfcda26-1f28-4d60-bc7b-8c0bafc6b132",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "251",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "4f943781-ce41-40e2-9c45-25dcd24f0090",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "251★",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "e3450882-d791-4172-b02a-ee7fdb36acfc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "252",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"universesbeyond"
+]
+},
+{
+"id": "69c43267-e862-4c08-ae7b-0d400d31f297",
+"name": "Sol Ring",
+"lang": "en",
+"set": "40k",
+"set_name": "Warhammer 40,000 Commander",
+"collector_number": "252★",
+"released_at": "2022-10-07",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false,
+"promo_types": [
+"surgefoil",
+"universesbeyond"
+]
+},
+{
+"id": "a0dd17da-9773-4a17-9aa7-4cd8958e1ef8",
+"name": "Sol Ring",
+"lang": "en",
+"set": "plg22",
+"set_name": "Love Your LGS 2022",
+"collector_number": "1",
+"released_at": "2022-07-01",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "1997",
+"full_art": false
+},
+{
+"id": "e3b2235b-6c18-436e-9d80-4a82ce0cac14",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1011",
+"released_at": "2022-05-04",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "38d347b7-dc17-417a-ab07-29fe99b9a101",
+"name": "Sol Ring",
+"lang": "en",
+"set": "plst",
+"set_name": "The List",
+"collector_number": "C21-263",
+"released_at": "2021-11-29",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "7bf22be9-bf1a-48ec-a825-d19504f9dfcc",
+"name": "Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "249",
+"released_at": "2021-02-22",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+},
+{
+"id": "244477e3-7371-4cbb-a5d8-dec71fac4c8f",
+"name": "Sol Ring",
+"lang": "en",
+"set": "prm",
+"set_name": "Magic Online Promos",
+"collector_number": "86124",
+"released_at": "2020-12-15",
+"digital": true,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "aa21fc27-42d0-456a-9882-34d7f404270b",
+"name": "Sol Ring",
+"lang": "en",
+"set": "cmr",
+"set_name": "Commander Legends",
+"collector_number": "700",
+"released_at": "2020-11-20",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"frame_effects": [
+"extendedart"
+],
+"full_art": false,
+"promo_types": [
+"boosterfun"
+]
+},
+{
+"id": "1b3a4537-1d51-47ac-a12e-6b8d68f530e6",
+"name": "Sol Ring",
+"lang": "en",
+"set": "plst",
+"set_name": "The List",
+"collector_number": "C18-222",
+"released_at": "2019-11-07",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "e5ba8c01-b6f5-486d-b300-cbae2c2b5edf",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pf19",
+"set_name": "MagicFest 2019",
+"collector_number": "7",
+"released_at": "2019-01-01",
+"digital": false,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "880711b0-da06-4c4f-aa4e-1be58fc0bc67",
+"name": "Sol Ring",
+"lang": "en",
+"set": "mps",
+"set_name": "Kaladesh Inventions",
+"collector_number": "24",
+"released_at": "2016-09-30",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "special",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "71773286-3f1b-4f81-ad72-adb126368b98",
+"name": "Sol Ring",
+"lang": "en",
+"set": "pz1",
+"set_name": "Legendary Cube Prize Pack",
+"collector_number": "129",
+"released_at": "2015-11-18",
+"digital": true,
+"finishes": [
+"nonfoil",
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2015",
+"full_art": false
+},
+{
+"id": "0e402b49-2937-4b98-ab31-304454bb7f9f",
+"name": "Sol Ring",
+"lang": "en",
+"set": "prm",
+"set_name": "Magic Online Promos",
+"collector_number": "35944",
+"released_at": "2013-01-11",
+"digital": true,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "2003",
+"full_art": false
+},
+{
+"id": "073bfdca-d7b8-4f4b-93f3-6e7c44bc0b0a",
+"name": "Sol Ring",
+"lang": "en",
+"set": "v10",
+"set_name": "From the Vault: Relics",
+"collector_number": "12",
+"released_at": "2010-08-27",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "mythic",
+"border_color": "black",
+"frame": "2003",
+"full_art": false
+},
+{
+"id": "1a5b855b-f391-4963-a3d9-47880e084a7f",
+"name": "Sol Ring",
+"lang": "en",
+"set": "g05",
+"set_name": "Judge Gift Cards 2005",
+"collector_number": "3",
+"released_at": "2005-01-01",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "black",
+"frame": "2003",
+"full_art": false,
+"promo_types": [
+"judgegift"
+]
+},
+{
+"id": "2f18e125-ac4a-45d0-8055-98f59c77324e",
+"name": "Sol Ring",
+"lang": "fr",
+"set": "fbb",
+"set_name": "Foreign Black Border",
+"collector_number": "274",
+"released_at": "1994-04-11",
+"digital": false,
+"finishes": [
+"nonfoil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "uncommon",
+"border_color": "black",
+"frame": "1993",
+"full_art": false
+},
+{
+"id": "d74a72a2-d46a-41c2-a400-70571197b020",
+"name": "Sol Ring // Sol Ring",
+"lang": "en",
+"set": "sld",
+"set_name": "Secret Lair Drop",
+"collector_number": "1512",
+"released_at": "2024-01-22",
+"digital": false,
+"finishes": [
+"foil"
+],
+"prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6ad8011d-3471-4369-9d68-b264cc027487&unique=prints",
+"color_identity": [],
+"rarity": "rare",
+"border_color": "borderless",
+"frame": "2015",
+"frame_effects": [
+"inverted"
+],
+"full_art": false
+}
+]
+}
