@@ -143,6 +143,7 @@ export default function Gallery() {
   const columns = Math.max(2, Math.floor(winW / 200));
   const tileWidth = (winW - 24 - 12 * (columns - 1)) / columns;
   const [busy, setBusy] = useState<{ label: string; done?: number; total?: number } | null>(null);
+  const [restores, setRestores] = useState(0);
   const openSheet = (next: NonNullable<typeof sheet>) => {
     setSheet(next);
     setSheetOpen(true);
@@ -273,6 +274,7 @@ export default function Gallery() {
       if (mode === 'replace' && prefs && typeof prefs === 'object') changePrefs({ ...DEFAULT_PREFS, ...prefs });
       setBusy({ label: 'Loading collection' });
       await load();
+      setRestores((n) => n + 1);
       setBusy(null);
       const copies = data.backup.cards.reduce((n, c) => n + c.quantity, 0);
       const skipped = data.skipped
@@ -660,9 +662,9 @@ export default function Gallery() {
         }}
       />
       {currentTab === 'opened' ? (
-        <OpenedView priceSource={source} header={tabs} />
+        <OpenedView key={restores} priceSource={source} header={tabs} />
       ) : currentTab === 'sold' ? (
-        <SoldView header={tabs || undefined} onChange={load} />
+        <SoldView key={restores} header={tabs || undefined} onChange={load} />
       ) : (
       <FlatList
         key={`cols-${columns}`}
