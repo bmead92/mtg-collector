@@ -1,7 +1,7 @@
 import './sim/mocks';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { summarizeSources } from '../src/lib/sources';
-import { sessionsOf } from '../src/lib/unsorted';
+import { historyRows, sessionsOf } from '../src/lib/unsorted';
 import { resetDatabases } from './stubs/expo-sqlite';
 import { ALT, SIM } from './sim/fixture';
 import { launchApp, review, scanPulls, settle, type App } from './sim/harness';
@@ -115,5 +115,17 @@ describe('scan sessions', () => {
     const s = sessionsOf([at('19:00'), at('19:05'), at('21:40'), at('21:41'), at('21:45')]);
     expect(s.map((x) => x.rows.length)).toEqual([3, 2]);
     expect(s[0].start).toBe('2026-11-20T21:40:00.000Z');
+  });
+});
+
+describe('history filter', () => {
+  const rows = [{ source_id: null }, { source_id: 1 }, { source_id: 2 }];
+  it('shows cards not in a pack, in both views', () => {
+    expect(historyRows(rows, 'all', null)).toHaveLength(3);
+    expect(historyRows(rows, 'loose', null)).toEqual([{ source_id: null }]);
+  });
+  it("adding to a pack hides that pack's own cards", () => {
+    expect(historyRows(rows, 'all', 1)).toEqual([{ source_id: null }, { source_id: 2 }]);
+    expect(historyRows(rows, 'loose', 1)).toEqual([{ source_id: null }]);
   });
 });

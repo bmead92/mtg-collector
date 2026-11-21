@@ -21,3 +21,7 @@ export function sessionsOf<T extends { added_at: string }>(rows: T[], gapMs = SE
   }
   return out;
 }
+
+export function historyRows<T extends { source_id: number | null }>(rows: T[], show: 'all' | 'loose', into: number | null): T[] {
+  return rows.filter((r) => (into == null || r.source_id !== into) && (show === 'all' || r.source_id == null));
+}
