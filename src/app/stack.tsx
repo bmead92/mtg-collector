@@ -353,7 +353,7 @@ export default function StackScreen() {
           <Text style={styles.buttonText}>Scan more</Text>
         </Pressable>
         <Pressable style={[styles.button, styles.secondary]} onPress={() => router.push('/add')} accessibilityLabel="Search by name">
-          <Text style={styles.buttonText}>⌕</Text>
+          <Text style={[styles.buttonText, { fontSize: 20 }]}>⌕</Text>
         </Pressable>
         <Pressable
           style={[styles.button, (batch.length === 0 || saving) && { opacity: 0.5 }]}
