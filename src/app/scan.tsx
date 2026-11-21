@@ -44,7 +44,7 @@ export default function ScanScreen() {
   const { hasPermission, canRequestPermission, requestPermission } = useCameraPermission();
   const device = useCameraDevice('back');
   const [mode, setModeState] = useState<Mode>(lastMode);
-  const photoOutput = usePhotoOutput({ qualityPrioritization: mode === 'single' ? 'balanced' : 'speed' });
+  const photoOutput = usePhotoOutput({ qualityPrioritization: 'balanced' });
   const [focused, setFocused] = useState(true);
   const [busy, setBusy] = useState(false);
   const [torch, setTorch] = useState(false);

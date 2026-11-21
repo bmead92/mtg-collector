@@ -1,9 +1,9 @@
 import { Images, type Image } from 'react-native-nitro-image';
 import type { CameraOrientation, CameraPhotoOutput, Photo } from 'react-native-vision-camera';
-import { recognizeCard, type CardGuess } from './ocr';
+import { parseCollectorStrip, recognizeCard, recognizeText, type CardGuess } from './ocr';
 import { deletePhoto } from './photos';
 
-const MAX_LONG_SIDE = 2000; // one card fills the frame; this keeps the collector line legible
+const MAX_LONG_SIDE = 2600;
 const JPEG_QUALITY = 90;
 
 export interface CaptureResult {
@@ -74,15 +74,50 @@ async function processUpright(image: Image, guide?: GuideFrame | null): Promise<
   image = await downscale(image);
 
   const first = await saveAndRead(image);
-  if (score(first.guess) >= 2) return first;
+  if (score(first.guess) >= 2) return withCollectorStrip(first, image);
 
-  const flipped = await saveAndRead(await image.rotateAsync(180, false));
+  const turned = await image.rotateAsync(180, false);
+  const flipped = await saveAndRead(turned);
   if (score(flipped.guess) > score(first.guess)) {
     deletePhoto(first.photoUri);
-    return flipped;
+    return withCollectorStrip(flipped, turned);
   }
   deletePhoto(flipped.photoUri);
-  return first;
+  return withCollectorStrip(first, image);
+}
+
+const STRIP_TOP = 0.86;
+const STRIP_MAX_WIDTH = 3000;
+
+async function withCollectorStrip(result: CaptureResult, image: Image): Promise<CaptureResult> {
+  if (result.guess.collectorNumber && result.guess.setCode) return result;
+  let path: string | null = null;
+  try {
+    let strip = await image.cropAsync(0, Math.round(image.height * STRIP_TOP), image.width, image.height);
+    const s = Math.min(2, STRIP_MAX_WIDTH / strip.width);
+    if (s > 1) strip = await strip.resizeAsync(Math.round(strip.width * s), Math.round(strip.height * s));
+    path = await strip.saveToTemporaryFileAsync('jpg', JPEG_QUALITY);
+    const read = parseCollectorStrip(await recognizeText(path));
+    const g = result.guess;
+    const rawText = `${g.rawText}\n${read.rawText}`;
+    if (!read.setCode && !read.collectorNumber) return { ...result, guess: { ...g, rawText } };
+    const setCode = g.setCode ?? read.setCode;
+    return {
+      ...result,
+      guess: {
+        ...g,
+        setCode,
+        lang: g.setCode ? g.lang : (read.lang ?? g.lang),
+        foil: g.setCode ? g.foil : read.foil,
+        collectorNumber: g.collectorNumber ?? (read.setCode === setCode || !read.setCode ? read.collectorNumber : null),
+        rawText,
+      },
+    };
+  } catch {
+    return result;
+  } finally {
+    if (path) deletePhoto(path.startsWith('file://') ? path : `file://${path}`);
+  }
 }
 
 export async function processPhoto(photo: Photo, guide?: GuideFrame | null): Promise<CaptureResult> {

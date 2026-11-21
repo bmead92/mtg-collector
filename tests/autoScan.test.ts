@@ -26,11 +26,16 @@ function run(events: Ev[], until: number, mergedIdAtCapture: string | null = nul
 
 describe('auto capture trigger', () => {
   it('captures after two steady agreeing reads', () => {
-    expect(run([[0, 'solring', null], [250, 'solring', null]], 2000)).toEqual([400]);
+    expect(run([[0, 'solring', 'CMM#410'], [250, 'solring', 'CMM#410']], 2000)).toEqual([400]);
   });
 
   it('a single unchanged read captures after STEADY_MS', () => {
-    expect(run([[0, 'solring', null]], 2000)).toEqual([600]);
+    expect(run([[0, 'solring', 'CMM#410']], 2000)).toEqual([600]);
+  });
+
+  it('no collector line read yet: waits longer for one', () => {
+    expect(run([[0, 'solring', null], [250, 'solring', null]], 2000)).toEqual([1500]);
+    expect(run([[0, 'solring', null], [250, 'solring', null], [700, 'solring', 'CMM#410'], [800, 'solring', 'CMM#410']], 2000)).toEqual([700]);
   });
 
   it('does not capture a card that is still sliding', () => {
@@ -50,7 +55,7 @@ describe('auto capture trigger', () => {
   });
 
   it('takes the lock id from the merged read', () => {
-    const ev: Ev[] = [[0, 'sidequestplayblitzball', null], [250, 'sidequestplayblitzball', null], [1500, 'ght', 'FIN#158'], [1750, 'ght', 'FIN#158']];
+    const ev: Ev[] = [[0, 'sidequestplayblitzball', 'FIN#158'], [250, 'sidequestplayblitzball', null], [1500, 'ght', 'FIN#158'], [1750, 'ght', 'FIN#158']];
     expect(run(ev, 3000, 'FIN#158')).toEqual([400]);
   });
 

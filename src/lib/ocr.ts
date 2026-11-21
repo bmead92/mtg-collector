@@ -129,6 +129,22 @@ export function parseCardText(result: Text): CardGuess {
 
   const bottomLines = lines.filter((l) => rel(l) > 0.66 && !COPYRIGHT.test(l.text)).sort((a, b) => a.y - b.y);
 
+  readCollectorLines(bottomLines, guess);
+
+  const topLines = lines.filter((l) => rel(l) < 0.2).sort((a, b) => a.y - b.y || a.x - b.x);
+  for (const l of topLines) {
+    const cleaned = cleanName(l.text);
+    if (cleaned) {
+      guess.name = cleaned;
+      guess.nameBox = { x: l.x, y: l.y, h: l.h };
+      break;
+    }
+  }
+
+  return guess;
+}
+
+function readCollectorLines(bottomLines: Line[], guess: CardGuess) {
   let setLineIndex = -1;
   for (let i = 0; i < bottomLines.length; i++) {
     const m = matchSetLang(bottomLines[i].text);
@@ -162,18 +178,16 @@ export function parseCardText(result: Text): CardGuess {
     const above = bottomLines[setLineIndex - 1].text.trim();
     if (/^[0-9OIl]{1,4}$/.test(above) && /\d/.test(above)) guess.collectorNumber = stripLeadingZeros(digits(above));
   }
+}
 
-  const topLines = lines.filter((l) => rel(l) < 0.2).sort((a, b) => a.y - b.y || a.x - b.x);
-  for (const l of topLines) {
-    const cleaned = cleanName(l.text);
-    if (cleaned) {
-      guess.name = cleaned;
-      guess.nameBox = { x: l.x, y: l.y, h: l.h };
-      break;
-    }
-  }
-
-  return guess;
+export function parseCollectorStrip(result: Text): Pick<CardGuess, 'setCode' | 'lang' | 'foil' | 'collectorNumber' | 'rawText'> {
+  const raw = result.blocks.flatMap((b) => b.lines);
+  const lines = uprightLines(raw, textTurns(raw))
+    .filter((l) => !COPYRIGHT.test(l.text))
+    .sort((a, b) => a.y - b.y);
+  const guess: CardGuess = { name: null, setCode: null, collectorNumber: null, foil: false, rawText: result.resultText };
+  readCollectorLines(lines, guess);
+  return { setCode: guess.setCode, lang: guess.lang, foil: guess.foil, collectorNumber: guess.collectorNumber, rawText: guess.rawText };
 }
 
 function stripLeadingZeros(n: string): string {

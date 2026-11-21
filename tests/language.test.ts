@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Text } from 'react-native-vision-camera-ocr-plus';
 import { cardKey, isCompleteRead, mergeReads, sameCard } from '../src/lib/autoScan';
 import { langLabel } from '../src/lib/language';
-import { matchSetLang, parseCardText, type CardGuess } from '../src/lib/ocr';
+import { matchSetLang, parseCardText, parseCollectorStrip, type CardGuess } from '../src/lib/ocr';
 
 function ocr(lines: string[]): Text {
   const step = 880 / lines.length;
@@ -114,5 +114,20 @@ describe('identify and price a foreign card (real Scryfall request shapes)', () 
     const pc = await pricingPrinting(r.card!);
     expect(pc.id).toBe('en-1');
     expect(calls).toEqual(['/cards/mom/1/ja', '/cards/mom/1']);
+  });
+});
+
+describe('collector strip read', () => {
+  it('reads the set and number from the enlarged bottom strip', () => {
+    expect(parseCollectorStrip(ocr(['0158 R', 'FIN • EN  Artist Name', '™ & © 2025 Wizards of the Coast']))).toMatchObject({
+      setCode: 'FIN',
+      collectorNumber: '158',
+      lang: 'en',
+      foil: false,
+    });
+  });
+
+  it('finds nothing in a strip without a collector line', () => {
+    expect(parseCollectorStrip(ocr(['Flying', 'When this enters']))).toMatchObject({ setCode: null, collectorNumber: null });
   });
 });

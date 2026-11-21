@@ -4,6 +4,7 @@ export const MIN_STEADY_MS = 400; // two agreeing, unmoved reads spanning at lea
 export const STEADY_MS = 600; // …or a single unchanged read held this long
 export const RELEASE_MS = 800; // captured card must be gone this long before it can be captured again
 export const MIN_GAP_MS = 800; // never capture faster than this
+export const NO_NUMBER_MS = 1500; // without a collector line read yet, wait this long for one
 
 export interface AutoState {
   key: string | null; // what the camera sees right now (null = no card)
@@ -13,6 +14,7 @@ export interface AutoState {
   lockedKey: string | null; // last captured card, ignored until it leaves the view
   lockedId: string | null; // its "SET#NUMBER" when known: in a pile its collector line can peek out alone
   id: string | null; // "SET#NUMBER" of the latest read, if it had one
+  numbered: boolean; // some read of the current card had its collector line
   awaySince: number | null; // when the locked card was last replaced by something else / nothing
   lastCaptureAt: number;
 }
@@ -25,6 +27,7 @@ export const initialAutoState = (): AutoState => ({
   lockedKey: null,
   lockedId: null,
   id: null,
+  numbered: false,
   awaySince: null,
   lastCaptureAt: -Infinity,
 });
@@ -77,8 +80,10 @@ export function observe(
     next.key = key;
     next.since = now;
     next.reads = key ? 1 : 0;
+    next.numbered = !!id;
   } else if (key) {
     next.reads = s.reads + 1;
+    next.numbered = s.numbered || !!id;
   }
   if (next.lockedKey) {
     if (isLocked(next, key, id)) next.awaySince = null;
@@ -103,7 +108,7 @@ export function check(s: AutoState, now: number): { state: AutoState; capture: b
   const held = now - state.since;
   const ready =
     state.key != null &&
-    ((state.reads >= 2 && held >= MIN_STEADY_MS) || held >= STEADY_MS) &&
+    (state.numbered ? (state.reads >= 2 && held >= MIN_STEADY_MS) || held >= STEADY_MS : held >= NO_NUMBER_MS) &&
     now - state.lastCaptureAt >= MIN_GAP_MS &&
     !isLocked(state, state.key, state.id);
   if (!ready) return { state, capture: false };
