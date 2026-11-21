@@ -1,14 +1,12 @@
 import { router } from 'expo-router';
 import { useEffect, useRef, useState, type ComponentRef } from 'react';
 import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { PrintingPicker } from '../components/PrintingPicker';
 import { colors, readable } from '../components/theme';
 import { autocompleteNames, cardByExactName, type ScryfallCard } from '../lib/scryfall';
 import { enqueueCard, useStack } from '../lib/stack';
 
 export default function AddScreen() {
-  const insets = useSafeAreaInsets();
   const stack = useStack();
   const [query, setQuery] = useState('');
   const [names, setNames] = useState<string[]>([]);
@@ -56,18 +54,25 @@ export default function AddScreen() {
   return (
     <View style={styles.container}>
       <View style={[styles.top, readable]}>
-        <TextInput
-          ref={input}
-          value={query}
-          onChangeText={setQuery}
-          autoFocus
-          autoCorrect={false}
-          placeholder="Card name"
-          placeholderTextColor={colors.textMuted}
-          style={styles.input}
-          returnKeyType="search"
-          onSubmitEditing={() => query.trim().length >= 2 && names[0] && open(names[0])}
-        />
+        <View style={styles.searchRow}>
+          <TextInput
+            ref={input}
+            value={query}
+            onChangeText={setQuery}
+            autoFocus
+            autoCorrect={false}
+            placeholder="Card name"
+            placeholderTextColor={colors.textMuted}
+            style={styles.input}
+            returnKeyType="search"
+            onSubmitEditing={() => query.trim().length >= 2 && names[0] && open(names[0])}
+          />
+          {stack.length > 0 && (
+            <Pressable style={styles.review} onPress={() => router.replace('/stack')}>
+              <Text style={styles.buttonText}>Review {stack.length}</Text>
+            </Pressable>
+          )}
+        </View>
         {added && <Text style={styles.added}>Added {added}</Text>}
       </View>
       <FlatList
@@ -82,13 +87,6 @@ export default function AddScreen() {
           </Pressable>
         )}
       />
-      {stack.length > 0 && (
-        <View style={[styles.footer, { paddingBottom: insets.bottom + 12 }]}>
-          <Pressable style={styles.button} onPress={() => router.replace('/stack')}>
-            <Text style={styles.buttonText}>Review {stack.length}</Text>
-          </Pressable>
-        </View>
-      )}
       <PrintingPicker visible={card != null} card={card} onSelect={add} onClose={() => setCard(null)} />
     </View>
   );
@@ -97,7 +95,10 @@ export default function AddScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.bg },
   top: { padding: 12, gap: 8 },
+  searchRow: { flexDirection: 'row', gap: 8 },
+  review: { backgroundColor: colors.accent, paddingHorizontal: 16, borderRadius: 10, justifyContent: 'center' },
   input: {
+    flex: 1,
     backgroundColor: colors.surface,
     borderRadius: 10,
     borderWidth: 1,
@@ -119,17 +120,5 @@ const styles = StyleSheet.create({
   },
   name: { color: colors.text, fontSize: 16, flex: 1 },
   chevron: { color: colors.textMuted, fontSize: 20 },
-  footer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingHorizontal: 16,
-    paddingTop: 12,
-    backgroundColor: colors.surface,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.border,
-  },
-  button: { backgroundColor: colors.accent, paddingVertical: 14, borderRadius: 12, alignItems: 'center' },
   buttonText: { color: '#fff', fontWeight: '700' },
 });
