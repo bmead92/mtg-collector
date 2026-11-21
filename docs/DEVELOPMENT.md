@@ -5,7 +5,7 @@ user-facing page (what the app does, download, install, FAQ).
 
 ## Current status & handoff
 
-**Version 1.0.0** (Nov 20, 2026), first public release. Product decisions and the reasons behind them:
+**Version 1.0.1** (Nov 21, 2026). 1.0.0 (Nov 20) was the first public release. Product decisions and the reasons behind them:
 [DECISIONS.md](DECISIONS.md). Release history: GitHub Releases.
 
 **Going public:** free APK on GitHub Releases + optional Ko-fi ("Buy me a pack", `DONATE_URL` in
@@ -18,7 +18,7 @@ Mana Pool + TCGplayer + Cardmarket prices (main price selectable); quantities; f
 across restarts; **Opened** tab (packs / boxes: cost vs value); **Pack / box** picker (set list from
 Scryfall → product with its Mana Pool price); **Growth** screen (one line chart per day). Photos are not stored.
 
-**Recent versions:** 1.0.0 renamed MTG Collector (repo bmead92/mtg-collector, backups in Downloads › MTG Collector, package id unchanged) · 0.17.7 market price is the headline, lowest listing under it · 0.17.5 foldables / wide screens (scanner frame fits by height too, more gallery columns, readable-width pages and sheets, capped card image; tested on the Pixel Fold emulator folded + unfolded and Fold7 sizes; phones unchanged), Commander precons listed first · 0.17.4 Scryfall 429 retry, network-error fixes, thousands separators in the header · 0.17.2 private release key (first build signed with it: 0.17.1), Buy me a pack row with a hand-drawn pack icon, backup file fix after reinstall · 0.17 Import deck (MTGJSON precons with price, pasted Moxfield / Archidekt / plain lists), Paid total on Growth · 0.16.2 first-run scan tip, camera-denied screen · 0.16.1 automatic backups to Downloads › MTG Collector (survive uninstall), thousands separators · 0.16 Sell (Sold tab, undo, pack gains include sales; Delete erases history), swipe between cards · 0.15.2 restore progress bar, ~10× faster restore · 0.15.1 years on long Growth charts · 0.15 search printings (set, code, number, year, treatment), set symbols, prices in the printing list fixed · 0.14 pick the set from a list instead of reading the wrapper · 0.13 foreign cards, update banner, report a problem · 0.12 public-release prep (icon, colour dots, notice, About, User-Agent) · 0.7 Stack persistence + rename to MTG Collection (package id unchanged) · 0.8 Opened tab
+**Recent versions:** 1.0.1 Scan asks singles or pack / box first, Select in the Stack saves part of it to a pack, Add saved cards to a pack (Tools / Opened), sharper auto scans that wait for the collector line plus a second read of the enlarged bottom strip, Opened / Sold refresh after a restore, card page without a picture no longer crashes · 1.0.0 renamed MTG Collector (repo bmead92/mtg-collector, backups in Downloads › MTG Collector, package id unchanged) · 0.17.7 market price is the headline, lowest listing under it · 0.17.5 foldables / wide screens (scanner frame fits by height too, more gallery columns, readable-width pages and sheets, capped card image; tested on the Pixel Fold emulator folded + unfolded and Fold7 sizes; phones unchanged), Commander precons listed first · 0.17.4 Scryfall 429 retry, network-error fixes, thousands separators in the header · 0.17.2 private release key (first build signed with it: 0.17.1), Buy me a pack row with a hand-drawn pack icon, backup file fix after reinstall · 0.17 Import deck (MTGJSON precons with price, pasted Moxfield / Archidekt / plain lists), Paid total on Growth · 0.16.2 first-run scan tip, camera-denied screen · 0.16.1 automatic backups to Downloads › MTG Collector (survive uninstall), thousands separators · 0.16 Sell (Sold tab, undo, pack gains include sales; Delete erases history), swipe between cards · 0.15.2 restore progress bar, ~10× faster restore · 0.15.1 years on long Growth charts · 0.15 search printings (set, code, number, year, treatment), set symbols, prices in the printing list fixed · 0.14 pick the set from a list instead of reading the wrapper · 0.13 foreign cards, update banner, report a problem · 0.12 public-release prep (icon, colour dots, notice, About, User-Agent) · 0.7 Stack persistence + rename to MTG Collection (package id unchanged) · 0.8 Opened tab
 (`sources` + `additions`) · 0.9 product picker · 0.10 Growth + daily `value_snapshots` · 0.11 Growth as one
 line chart (react-native-svg).
 
@@ -186,7 +186,10 @@ worklet posts a result to JS only when its text hash changes (`createSynchroniza
 JS parses each read with the normal `parseCardText` and keys it by normalised name (`cardKey` also needs a
 collector line or 4+ lines, so playmats don't count). **Capture rule:** two reads of the same key whose name
 line hasn't moved more than half a line height, spanning ≥ 400 ms (or one unchanged read held 600 ms; identical
-text is only posted once), min 0.8 s between captures. Movement resets the clock, so cards sliding over a pile
+text is only posted once), min 0.8 s between captures. Until some read of the card has its collector line
+(`SET#NUMBER`) it waits 1.5 s (`NO_NUMBER_MS`). The photo is taken at `balanced` quality, kept at 2600 px, and
+when the set or number is still missing a second OCR pass reads the bottom 14% enlarged 2× (`withCollectorStrip`
+in `capture.ts`, `parseCollectorStrip` in `ocr.ts`). Movement resets the clock, so cards sliding over a pile
 never count as steady. **Lock:** the captured card (by name *and* by `SET#NUMBER`, since in a pile the previous
 card's collector line peeks out under the next one) is ignored until it has been out of view for 800 ms
 (second copy = take it out and put it back).
@@ -221,8 +224,14 @@ used to read as set "BETWE").
   enforces it (on open, after quantity edits and restores): missing copies → already owned; surplus →
   taken off the newest additions; orphans dropped. Row merges re-point additions; deletes remove them.
 - First launch on v0.8.0 logs every existing card as already owned on its `created_at`.
-- `saveStack(target)`: `owned` | `new` (creates the source) | `existing` (adds packs opened to a box).
-  UI: `SaveSheet` (Stack screen) → `OpenedView` tab in the gallery → `source/[id]` page. Summaries are pure
+- `saveStack(target, only?)`: `owned` | `new` (creates the source) | `existing` (adds packs opened to a box);
+  `only` = ids picked with Select on the Stack screen (the rest stay in the Stack).
+  UI: `SaveSheet` (Stack screen) → `OpenedView` tab in the gallery → `source/[id]` page.
+- Scan button → "What are you scanning?" (singles / pack or box / keep opening). Pack or box opens the
+  product picker (`/scan?pick=1`) before the camera.
+- **Add saved cards to a pack** (`/assign`): additions with no source (`listUnsorted`), grouped into scan
+  sessions (`sessionsOf`, a 30 min gap starts a new one; the newest is preselected) → `SaveSheet` →
+  `assignAdditions` points them at the new / continued source. Whole additions move (no splitting copies). Summaries are pure
   (`sources.ts`) and use the main price source.
 - Backup v2 adds `sources` (with a `ref`) and per-card `from` (additions); v1 files still restore (all
   already owned). Merge restores reuse a source with the same name + created_at.

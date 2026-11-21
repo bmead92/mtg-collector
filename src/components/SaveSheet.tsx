@@ -151,7 +151,7 @@ export function SaveSheet({
             <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ gap: 12 }}>
               {step.kind === 'choose' ? (
                 <>
-                  <Text style={styles.title}>Where are these {cards} from?</Text>
+                  <Text style={styles.title}>{cardCount === 1 ? 'Where is this card from?' : `Where are these ${cards} from?`}</Text>
                   <Text style={styles.subtitle}>Worth {formatCents(valueCents)} now</Text>
                   <View style={styles.list}>
                     {opening &&
