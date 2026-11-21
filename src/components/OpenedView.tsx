@@ -165,6 +165,12 @@ export function OpenedView({ priceSource, header }: Props) {
           to track what you paid against what you pulled.
         </Text>
       )}
+
+      {!loading && (
+        <Pressable style={styles.addSaved} onPress={() => router.push('/assign')}>
+          <Text style={styles.addSavedText}>Add saved cards to a pack</Text>
+        </Pressable>
+      )}
     </ScrollView>
   );
 }
@@ -202,5 +208,7 @@ const styles = StyleSheet.create({
   value: { color: colors.price, fontWeight: '700' },
   gain: { fontSize: 12, fontWeight: '600' },
   chevron: { color: colors.textMuted, fontSize: 20, width: 14, textAlign: 'center' },
+  addSaved: { alignSelf: 'center', padding: 16, marginTop: 8 },
+  addSavedText: { color: colors.accent, fontWeight: '600' },
   empty: { color: colors.textMuted, textAlign: 'center', marginHorizontal: 32, marginTop: 40, lineHeight: 20 },
 });

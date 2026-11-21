@@ -325,19 +325,21 @@ export type SaveTarget =
 export const savableItems = (list: readonly StackItem[]) =>
   list.filter((it) => it.include && it.card && it.status === 'done');
 
-export async function saveStack(target: SaveTarget = { kind: 'owned' }): Promise<number> {
-  const toSave = savableItems(items);
-  if (toSave.length === 0) return 0;
-  let sourceId: number | null = null;
-  if (target.kind === 'new') {
-    sourceId = await createSource(target.source);
-  } else if (target.kind === 'existing') {
+export async function sourceForTarget(target: SaveTarget): Promise<number | null> {
+  if (target.kind === 'new') return createSource(target.source);
+  if (target.kind === 'existing') {
     const src = await getSource(target.sourceId);
-    if (src) {
-      sourceId = src.id;
-      await updateSource(src.id, { packs_opened: src.packs_opened + Math.max(0, target.packsOpened) });
-    }
+    if (!src) return null;
+    await updateSource(src.id, { packs_opened: src.packs_opened + Math.max(0, target.packsOpened) });
+    return src.id;
   }
+  return null;
+}
+
+export async function saveStack(target: SaveTarget = { kind: 'owned' }, only?: ReadonlySet<string>): Promise<number> {
+  const toSave = savableItems(items).filter((it) => !only || only.has(it.id));
+  if (toSave.length === 0) return 0;
+  const sourceId = await sourceForTarget(target);
   let saved = 0;
   try {
     for (const it of toSave) {

@@ -63,6 +63,7 @@ import { formatCents, refreshPrices, removeScan } from '../lib/pricing';
 import { cachedPrice } from '../lib/prices';
 import { frontName, isDoubleFacedLayout } from '../lib/scryfall';
 import { enqueueRead, useStack } from '../lib/stack';
+import { setOpening, useOpening } from '../lib/opening';
 import type { CardGuess } from '../lib/ocr';
 
 function deviceInfo() {
@@ -129,6 +130,7 @@ export default function Gallery() {
   };
   const [sheet, setSheet] = useState<
     | { kind: 'tools' }
+    | { kind: 'scan' }
     | { kind: 'sort' }
     | { kind: 'export' }
     | { kind: 'restore'; data: ParsedBackup }
@@ -136,6 +138,7 @@ export default function Gallery() {
     | null
   >(null);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const opening = useOpening();
   const { width: winW } = useWindowDimensions();
   const columns = Math.max(2, Math.floor(winW / 200));
   const tileWidth = (winW - 24 - 12 * (columns - 1)) / columns;
@@ -316,6 +319,31 @@ export default function Gallery() {
         options: SORTS.map((o) => ({ label: o.label, selected: o.key === sort, onPress: () => setSort(o.key) })),
       };
     }
+    if (sheet.kind === 'scan') {
+      return {
+        title: 'What are you scanning?',
+        options: [
+          ...(opening
+            ? [{ icon: '★', label: `Keep opening ${opening.product.name}`, onPress: () => router.push('/scan') }]
+            : []),
+          {
+            icon: '◇',
+            label: 'A pack or box',
+            description: 'Pick what you are opening',
+            onPress: () => router.push({ pathname: '/scan', params: { pick: '1' } }),
+          },
+          {
+            icon: '✓',
+            label: 'Singles',
+            description: 'Cards you already have',
+            onPress: () => {
+              setOpening(null);
+              router.push('/scan');
+            },
+          },
+        ],
+      };
+    }
     if (sheet.kind === 'tools') {
       return {
         title: 'Tools',
@@ -331,6 +359,12 @@ export default function Gallery() {
             label: 'Export',
             description: filtered ? `Share the ${shownCopies} cards shown` : 'Share your collection as a file',
             onPress: () => openSheet({ kind: 'export' }),
+          },
+          {
+            icon: '◇',
+            label: 'Add saved cards to a pack',
+            description: 'For cards you saved without picking a pack or box',
+            onPress: () => router.push('/assign'),
           },
           {
             icon: '⇩',
@@ -692,7 +726,7 @@ export default function Gallery() {
       />
       )}
 
-      <Pressable style={styles.fab} onPress={() => router.push('/scan')}>
+      <Pressable style={styles.fab} onPress={() => openSheet({ kind: 'scan' })}>
         <Text style={styles.fabText}>Scan</Text>
       </Pressable>
 

@@ -1,0 +1,85 @@
+import './sim/mocks';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { summarizeSources } from '../src/lib/sources';
+import { sessionsOf } from '../src/lib/unsorted';
+import { resetDatabases } from './stubs/expo-sqlite';
+import { ALT, SIM } from './sim/fixture';
+import { launchApp, review, scanPulls, settle, type App } from './sim/harness';
+import { openPack, packValue, type Pull } from './sim/packs';
+import { seeded } from './sim/rng';
+
+beforeEach(() => resetDatabases());
+
+async function scan(app: App, pulls: Pull[], rng: () => number) {
+  scanPulls(app, pulls, rng);
+  await settle(app);
+  await review(app, pulls);
+  await settle(app);
+}
+
+const pack = (name: string) => ({ kind: 'pack' as const, name, cost_cents: 600, packs: 1, packs_opened: 1 });
+
+async function valueOf(app: App, id: number) {
+  const src = (await app.db.getSource(id))!;
+  const rows = await app.db.listSourceCards(id);
+  const [s] = summarizeSources([src], rows.map((r) => ({ source_id: r.source_id, copies: r.copies, priceCents: r.price_cents })));
+  return { copies: rows.reduce((n, r) => n + r.copies, 0), value: s.valueCents };
+}
+
+describe('two packs in one stack', () => {
+  it('selected cards save to one pack, the rest stay for the next', async () => {
+    const rng = seeded(31);
+    const app = await launchApp();
+    const a = openPack(SIM, rng, 'play');
+    const b = openPack(ALT, rng, 'play');
+    await scan(app, [...a, ...b], rng);
+
+    const items = app.stack.getStackItems();
+    const simIds = new Set(items.filter((i) => i.card?.set === SIM.code.toLowerCase()).map((i) => i.id));
+    expect(await app.stack.saveStack({ kind: 'new', source: pack('First') }, simIds)).toBe(a.length);
+    expect(app.stack.getStackItems()).toHaveLength(b.length);
+
+    expect(await app.stack.saveStack({ kind: 'new', source: pack('Second') })).toBe(b.length);
+    const [second, first] = await app.db.listSources();
+    expect(await valueOf(app, first.id)).toEqual({ copies: a.length, value: packValue(a) });
+    expect(await valueOf(app, second.id)).toEqual({ copies: b.length, value: packValue(b) });
+  });
+});
+
+describe('adding saved cards to a pack', () => {
+  it('cards saved without a pack move into one later', async () => {
+    const rng = seeded(32);
+    const app = await launchApp();
+    const pulls = openPack(SIM, rng, 'play');
+    await scan(app, pulls, rng);
+    await app.stack.saveStack();
+
+    const unsorted = await app.db.listUnsorted();
+    const [session] = sessionsOf(unsorted);
+    expect(session.rows.reduce((n, r) => n + r.copies, 0)).toBe(pulls.length);
+
+    const id = (await app.stack.sourceForTarget({ kind: 'new', source: pack('Marvel') }))!;
+    await app.db.assignAdditions(session.rows.map((r) => r.addition_id), id);
+
+    expect(await valueOf(app, id)).toEqual({ copies: pulls.length, value: packValue(pulls) });
+    expect(await app.db.listUnsorted()).toHaveLength(0);
+  });
+
+  it('cards already in a pack are not moved', async () => {
+    const rng = seeded(33);
+    const app = await launchApp();
+    const pulls = openPack(SIM, rng, 'play');
+    await scan(app, pulls, rng);
+    await app.stack.saveStack({ kind: 'new', source: pack('Opened') });
+    expect(await app.db.listUnsorted()).toHaveLength(0);
+  });
+});
+
+describe('scan sessions', () => {
+  it('splits saves more than 30 minutes apart', () => {
+    const at = (t: string) => ({ added_at: `2026-11-20T${t}:00.000Z` });
+    const s = sessionsOf([at('19:00'), at('19:05'), at('21:40'), at('21:41'), at('21:45')]);
+    expect(s.map((x) => x.rows.length)).toEqual([3, 2]);
+    expect(s[0].start).toBe('2026-11-20T21:40:00.000Z');
+  });
+});

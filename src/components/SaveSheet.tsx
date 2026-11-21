@@ -18,6 +18,7 @@ interface Props {
   opening: Opening | null;
   suggestions: { pack: Suggestion[]; box: Suggestion[] } | null;
   setCodes: string[];
+  showOwned?: boolean;
   onSave: (target: SaveTarget) => void;
   onClose: () => void;
 }
@@ -31,7 +32,18 @@ type Step =
 
 const DEFAULT_BOX_PACKS = 30; // play booster box; collector boxes have 12
 
-export function SaveSheet({ visible, cardCount, valueCents, openBoxes, opening, suggestions, setCodes, onSave, onClose }: Props) {
+export function SaveSheet({
+  visible,
+  cardCount,
+  valueCents,
+  openBoxes,
+  opening,
+  suggestions,
+  setCodes,
+  showOwned = true,
+  onSave,
+  onClose,
+}: Props) {
   const insets = useSafeAreaInsets();
   const { height } = useWindowDimensions();
   const browseBack = useRef<(() => boolean) | null>(null);
@@ -154,7 +166,7 @@ export function SaveSheet({ visible, cardCount, valueCents, openBoxes, opening, 
                           '★',
                         );
                       })()}
-                    {option('Already owned', 'Singles, trades, cards you had', () => onSave({ kind: 'owned' }), '✓')}
+                    {showOwned && option('Already owned', 'Singles, trades, cards you had', () => onSave({ kind: 'owned' }), '✓')}
                     {openBoxes.map((b) =>
                       option(`Continue: ${b.name}`, `${boxProgress(b)} opened so far`, () => {
                         setPacks(Math.max(1, Math.min(packsGuess, b.packs - b.packs_opened || packsGuess)));

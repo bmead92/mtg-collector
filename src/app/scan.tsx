@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { router, useFocusEffect } from 'expo-router';
+import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
@@ -55,7 +55,8 @@ export default function ScanScreen() {
   };
   const stack = useStack();
   const opening = useOpening();
-  const [picking, setPicking] = useState(false);
+  const { pick } = useLocalSearchParams<{ pick?: string }>();
+  const [picking, setPicking] = useState(pick === '1');
   const [tip, setTip] = useState(false);
   const { width: winW, height: winH } = useWindowDimensions();
   const [bottomBarH, setBottomBarH] = useState(200);
@@ -364,7 +365,7 @@ export default function ScanScreen() {
         </View>
       </Modal>
 
-      <Modal visible={tip} transparent animationType="fade" onRequestClose={closeTip}>
+      <Modal visible={tip && !picking} transparent animationType="fade" onRequestClose={closeTip}>
         <View style={styles.tipBackdrop}>
           <View style={styles.tipCard}>
             <Text style={styles.tipTitle}>Scanning</Text>

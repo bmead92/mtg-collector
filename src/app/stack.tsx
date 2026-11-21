@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
-import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { langLabel } from '../lib/language';
 import { PrintingPicker } from '../components/PrintingPicker';
@@ -53,10 +53,27 @@ export default function StackScreen() {
   const [saveSheet, setSaveSheet] = useState<{ boxes: Source[] } | null>(null);
   const opening = useOpening();
   const [suggestions, setSuggestions] = useState<{ pack: Suggestion[]; box: Suggestion[] } | null>(null);
+  const [selected, setSelected] = useState<Set<string> | null>(null);
 
   const busyCount = items.filter(isBusy).length;
   const toSave = items.filter((i) => i.include && i.card && i.status === 'done');
-  const total = toSave.reduce((sum, i) => sum + (itemPrice(i, priceSource) ?? 0), 0);
+  const batch = selected ? toSave.filter((i) => selected.has(i.id)) : toSave;
+  const total = batch.reduce((sum, i) => sum + (itemPrice(i, priceSource) ?? 0), 0);
+  const sets = (() => {
+    const counts = new Map<string, string[]>();
+    for (const i of toSave) counts.set(i.card!.set, [...(counts.get(i.card!.set) ?? []), i.id]);
+    return [...counts.entries()].sort((a, b) => b[1].length - a[1].length);
+  })();
+  const toggle = (ids: string[]) =>
+    setSelected((prev) => {
+      const next = new Set(prev);
+      const all = ids.every((id) => next.has(id));
+      for (const id of ids) {
+        if (all) next.delete(id);
+        else next.add(id);
+      }
+      return next;
+    });
 
   const ordered = useMemo(
     () =>
@@ -85,7 +102,7 @@ export default function StackScreen() {
     }
     setSaveSheet({ boxes });
     setSuggestions(null);
-    const setCodes = setCodesByCount(toSave.map((i) => i.card!.set));
+    const setCodes = setCodesByCount(batch.map((i) => i.card!.set));
     getSealedCatalog()
       .then((catalog) =>
         setSuggestions({
@@ -100,8 +117,13 @@ export default function StackScreen() {
     setSaveSheet(null);
     setSaving(true);
     try {
-      await saveStack(target);
+      const saved = await saveStack(target, selected ?? undefined);
       if (getOpening()) setOpening(null); // those cards are saved: the next scan starts fresh
+      if (selected && saved < toSave.length) {
+        setSelected(null);
+        setSaving(false);
+        return;
+      }
       router.dismissTo('/');
     } catch (e) {
       Alert.alert('Save failed', String(e));
@@ -132,8 +154,9 @@ export default function StackScreen() {
       <View style={[styles.row, !item.include && styles.excluded]}>
         <Pressable
           style={styles.rowMain}
-          disabled={isBusy(item) && !item.photoUri}
+          disabled={selected ? !toSave.includes(item) : isBusy(item) && !item.photoUri}
           onPress={() => {
+            if (selected) return toggle([item.id]);
             setExpanded(open ? null : item.id);
             setSearch(item.card?.name ?? item.guess?.name ?? '');
           }}
@@ -175,15 +198,23 @@ export default function StackScreen() {
           </View>
           <View style={{ alignItems: 'flex-end', gap: 6 }}>
             <Text style={styles.price}>{item.status === 'pricing' ? '…' : item.card ? formatCents(price) : ''}</Text>
-            <Pressable hitSlop={10} onPress={() => updateItem(item.id, { include: !item.include })}>
-              <Text style={[styles.toggle, !item.include && { color: colors.textMuted }]}>
-                {item.include ? '✓ Keep' : '✕ Skip'}
-              </Text>
-            </Pressable>
+            {selected ? (
+              toSave.includes(item) && (
+                <View style={[styles.check, selected.has(item.id) && styles.checkOn]}>
+                  {selected.has(item.id) && <Text style={styles.checkMark}>✓</Text>}
+                </View>
+              )
+            ) : (
+              <Pressable hitSlop={10} onPress={() => updateItem(item.id, { include: !item.include })}>
+                <Text style={[styles.toggle, !item.include && { color: colors.textMuted }]}>
+                  {item.include ? '✓ Keep' : '✕ Skip'}
+                </Text>
+              </Pressable>
+            )}
           </View>
         </Pressable>
 
-        {open && (
+        {open && !selected && (
           <View style={styles.editor}>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               {item.photoUri && <Image source={{ uri: item.photoUri }} style={styles.crop} contentFit="cover" />}
@@ -246,23 +277,59 @@ export default function StackScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.headerTitle}>
-            {items.length} card{items.length === 1 ? '' : 's'}
-            {busyCount > 0 ? ` · ${busyCount} processing` : ''}
-          </Text>
-          <Text style={styles.headerSub}>Kept value {formatCents(total)} · tap a row to fix it</Text>
+      {selected ? (
+        <View style={styles.selectBar}>
+          <View style={[styles.header, { borderBottomWidth: 0 }]}>
+            <Text style={[styles.headerTitle, { flex: 1 }]}>{selected.size} selected</Text>
+            <Pressable hitSlop={8} onPress={() => setSelected(new Set(toSave.map((i) => i.id)))}>
+              <Text style={styles.link}>All</Text>
+            </Pressable>
+            <Pressable hitSlop={8} onPress={() => setSelected(new Set())}>
+              <Text style={styles.link}>None</Text>
+            </Pressable>
+            <Pressable hitSlop={8} onPress={() => setSelected(null)}>
+              <Text style={styles.link}>Cancel</Text>
+            </Pressable>
+          </View>
+          {sets.length > 1 && (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.setChips}>
+              {sets.map(([set, ids]) => {
+                const on = ids.every((id) => selected.has(id));
+                return (
+                  <Pressable key={set} style={[styles.setChip, on && styles.setChipOn]} onPress={() => toggle(ids)}>
+                    <Text style={[styles.setChipText, on && { color: '#fff' }]}>
+                      {set.toUpperCase()} · {ids.length}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          )}
         </View>
-        <View style={{ width: 150 }}>
-          <Segmented
-            options={['order', 'price'] as const}
-            value={sortBy}
-            onChange={setSortBy}
-            labels={{ order: 'Order', price: 'Price' }}
-          />
+      ) : (
+        <View style={styles.header}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.headerTitle}>
+              {items.length} card{items.length === 1 ? '' : 's'}
+              {busyCount > 0 ? ` · ${busyCount} processing` : ''}
+            </Text>
+            <Text style={styles.headerSub}>Kept value {formatCents(total)} · tap a row to fix it</Text>
+          </View>
+          {toSave.length > 1 && (
+            <Pressable hitSlop={8} onPress={() => setSelected(new Set())}>
+              <Text style={styles.link}>Select</Text>
+            </Pressable>
+          )}
+          <View style={{ width: 130 }}>
+            <Segmented
+              options={['order', 'price'] as const}
+              value={sortBy}
+              onChange={setSortBy}
+              labels={{ order: 'Order', price: 'Price' }}
+            />
+          </View>
         </View>
-      </View>
+      )}
 
       <FlatList
         data={ordered}
@@ -284,23 +351,25 @@ export default function StackScreen() {
           <Text style={styles.buttonText}>Scan more</Text>
         </Pressable>
         <Pressable
-          style={[styles.button, (toSave.length === 0 || saving) && { opacity: 0.5 }]}
+          style={[styles.button, (batch.length === 0 || saving) && { opacity: 0.5 }]}
           onPress={askWhereFrom}
-          disabled={toSave.length === 0 || saving}
+          disabled={batch.length === 0 || saving}
         >
-          <Text style={styles.buttonText}>{saving ? 'Saving…' : `Save ${toSave.length} · ${formatCents(total)}`}</Text>
+          <Text style={styles.buttonText}>
+            {saving ? 'Saving…' : `Save ${batch.length}${selected ? ' selected' : ''} · ${formatCents(total)}`}
+          </Text>
         </Pressable>
       </View>
 
       {saveSheet && (
         <SaveSheet
           visible
-          cardCount={toSave.length}
+          cardCount={batch.length}
           valueCents={total}
           openBoxes={saveSheet.boxes}
           opening={opening}
           suggestions={suggestions}
-          setCodes={setCodesByCount(toSave.map((i) => i.card!.set))}
+          setCodes={setCodesByCount(batch.map((i) => i.card!.set))}
           onSave={save}
           onClose={() => setSaveSheet(null)}
         />
@@ -350,6 +419,29 @@ const styles = StyleSheet.create({
   warn: { color: colors.danger, fontWeight: '600' },
   price: { color: colors.price, fontWeight: '800', fontSize: 16 },
   toggle: { color: colors.accent, fontWeight: '600', fontSize: 12 },
+  check: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: colors.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  checkOn: { backgroundColor: colors.accent, borderColor: colors.accent },
+  checkMark: { color: '#fff', fontWeight: '800', fontSize: 13 },
+  selectBar: { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border },
+  setChips: { gap: 8, paddingHorizontal: 16, paddingBottom: 12 },
+  setChip: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+  },
+  setChipOn: { backgroundColor: colors.accent, borderColor: colors.accent },
+  setChipText: { color: colors.text, fontWeight: '600', fontSize: 13 },
   editor: {
     padding: 12,
     gap: 8,
