@@ -1,4 +1,5 @@
 import { Image } from 'expo-image';
+import { printingTags } from '../../lib/printings';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import {
@@ -215,6 +216,7 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
           </Text>
           <Text style={[styles.link, !card && { opacity: 0.4 }]}>Change</Text>
         </Pressable>
+        {card && printingTags(card).length > 0 && <Text style={styles.tags}>{printingTags(card).join(' · ')}</Text>}
 
         <Text style={styles.label}>Finish</Text>
         <Segmented
@@ -301,6 +303,7 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
 }
 
 const styles = StyleSheet.create({
+  tags: { color: colors.accent, fontWeight: '600', marginTop: -4 },
   container: { flex: 1, backgroundColor: colors.bg },
   noImage: { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface },
   noImageText: { color: colors.textMuted },

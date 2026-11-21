@@ -1,4 +1,5 @@
 import { Image } from 'expo-image';
+import { printingTags } from '../lib/printings';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { ActivityIndicator, Alert, FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -179,6 +180,7 @@ export default function StackScreen() {
                   {item.card.set.toUpperCase()} #{item.card.collector_number} · {item.condition}
                   {langLabel(item.card.lang) ? ` · ${langLabel(item.card.lang)}` : ''}
                   {item.finish !== 'nonfoil' ? ` · ${item.finish}` : ''}
+                  {printingTags(item.card).length ? ` · ${printingTags(item.card).join(' · ')}` : ''}
                   {item.method !== 'set+number' && !item.doubtful ? ' · check printing' : ''}
                 </Text>
                 {item.doubtful && <Text style={styles.warn}>Check card: the name read doesn&apos;t match</Text>}
