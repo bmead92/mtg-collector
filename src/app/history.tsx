@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { router, useFocusEffect } from 'expo-router';
+import { router, Stack, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { Alert, Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,7 +7,7 @@ import { SaveSheet } from '../components/SaveSheet';
 import { Segmented } from '../components/Segmented';
 import { ToTopButton } from '../components/ToTopButton';
 import { colors, readable } from '../components/theme';
-import { assignAdditions, listHistory, listSources, type HistoryRow } from '../lib/db';
+import { assignAdditions, getSource, listHistory, listSources, type HistoryRow } from '../lib/db';
 import { useGalleryPrefs } from '../lib/prefs';
 import { cachedPrice } from '../lib/prices';
 import { formatCents } from '../lib/pricing';
@@ -29,16 +29,22 @@ type Show = 'all' | 'loose';
 export default function HistoryScreen() {
   const [{ priceSource }] = useGalleryPrefs();
   const insets = useSafeAreaInsets();
+  const { into } = useLocalSearchParams<{ into?: string }>();
+  const target = into ? Number(into) : null;
+  const [targetName, setTargetName] = useState<string | null>(null);
   const list = useRef<SectionList<HistoryRow, { key: string; title: string; data: HistoryRow[] }>>(null);
   const [rows, setRows] = useState<HistoryRow[] | null>(null);
-  const [show, setShow] = useState<Show>('all');
+  const [show, setShow] = useState<Show>(target ? 'loose' : 'all');
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [sheet, setSheet] = useState<{ boxes: Source[] } | null>(null);
   const [suggestions, setSuggestions] = useState<{ pack: Suggestion[]; box: Suggestion[] } | null>(null);
   const [saving, setSaving] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const load = useCallback(async () => setRows(await listHistory()), []);
+  const load = useCallback(async () => {
+    setRows(await listHistory());
+    if (target) setTargetName((await getSource(target))?.name ?? null);
+  }, [target]);
   useFocusEffect(
     useCallback(() => {
       load();
@@ -47,12 +53,12 @@ export default function HistoryScreen() {
 
   const sections = useMemo(
     () =>
-      sessionsOf((rows ?? []).filter((r) => show === 'all' || r.source_id == null)).map((s) => ({
+      sessionsOf((rows ?? []).filter((r) => r.source_id !== target && (show === 'all' || r.source_id == null))).map((s) => ({
         key: s.start,
         title: when(s.start),
         data: s.rows,
       })),
-    [rows, show],
+    [rows, show, target],
   );
   const chosen = (rows ?? []).filter((r) => selected.has(r.addition_id));
   const copies = chosen.reduce((n, r) => n + r.copies, 0);
@@ -69,6 +75,17 @@ export default function HistoryScreen() {
       }
       return next;
     });
+
+  const addToTarget = async () => {
+    setSaving(true);
+    try {
+      await assignAdditions(chosen.map((r) => r.addition_id), target);
+      router.back();
+    } catch (e) {
+      Alert.alert('Not saved', e instanceof Error ? e.message : String(e));
+      setSaving(false);
+    }
+  };
 
   const ask = async () => {
     let boxes: Source[] = [];
@@ -105,6 +122,7 @@ export default function HistoryScreen() {
 
   return (
     <View style={styles.container}>
+      {target != null && <Stack.Screen options={{ title: targetName ? `Add to ${targetName}` : 'Add cards' }} />}
       <View style={styles.top}>
         <Segmented
           options={['all', 'loose'] as const}
@@ -180,9 +198,9 @@ export default function HistoryScreen() {
           <Pressable style={[styles.secondary]} onPress={() => setSelected(new Set())}>
             <Text style={styles.secondaryText}>Clear</Text>
           </Pressable>
-          <Pressable style={[styles.button, saving && { opacity: 0.5 }]} disabled={saving} onPress={ask}>
-            <Text style={styles.buttonText}>
-              {saving ? 'Saving…' : `Add ${copies} to a pack · ${formatCents(value)}`}
+          <Pressable style={[styles.button, saving && { opacity: 0.5 }]} disabled={saving} onPress={target ? addToTarget : ask}>
+            <Text style={styles.buttonText} numberOfLines={1}>
+              {saving ? 'Saving…' : `Add ${copies}${target ? '' : ' to a pack'} · ${formatCents(value)}`}
             </Text>
           </Pressable>
         </View>

@@ -86,6 +86,29 @@ describe('adding saved cards to a pack', () => {
   });
 });
 
+describe('editing an opened pack', () => {
+  it('a forgotten card joins the existing pack; a wrong one goes back to not in a pack', async () => {
+    const rng = seeded(34);
+    const app = await launchApp();
+    const pulls = openPack(SIM, rng, 'play');
+    await scan(app, pulls.slice(0, -1), rng);
+    await app.stack.saveStack({ kind: 'new', source: pack('Marvel') });
+    await scan(app, pulls.slice(-1), rng);
+    await app.stack.saveStack();
+
+    const [src] = await app.db.listSources();
+    const forgotten = (await app.db.listHistory()).filter((r) => r.source_id == null);
+    expect(forgotten).toHaveLength(1);
+    await app.db.assignAdditions([forgotten[0].addition_id], src.id);
+    expect(await valueOf(app, src.id)).toEqual({ copies: pulls.length, value: packValue(pulls) });
+    expect(await app.db.listSources()).toHaveLength(1);
+
+    await app.db.removeFromSource(src.id, [forgotten[0].id]);
+    expect((await valueOf(app, src.id)).copies).toBe(pulls.length - 1);
+    expect((await app.db.listHistory()).filter((r) => r.source_id == null)).toHaveLength(1);
+  });
+});
+
 describe('scan sessions', () => {
   it('splits saves more than 30 minutes apart', () => {
     const at = (t: string) => ({ added_at: `2026-11-20T${t}:00.000Z` });

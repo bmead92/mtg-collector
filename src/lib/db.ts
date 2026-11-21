@@ -906,6 +906,17 @@ export async function assignAdditions(additionIds: number[], sourceId: number | 
   notifyChange();
 }
 
+export async function removeFromSource(sourceId: number, scanIds: number[]) {
+  if (scanIds.length === 0) return;
+  const conn = await db();
+  await conn.withTransactionAsync(async () => {
+    for (const id of scanIds) {
+      await conn.runAsync('UPDATE additions SET source_id = NULL WHERE source_id = ? AND scan_id = ?', sourceId, id);
+    }
+  });
+  notifyChange();
+}
+
 export interface Addition {
   scan_id: number;
   source_id: number | null;
