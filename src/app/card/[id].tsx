@@ -157,7 +157,8 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
       },
     ]);
 
-  const faces = card ? faceImages(card) : scan.image_uri ? [{ name: scan.name, uri: scan.image_uri }] : [];
+  const cardFaces = card ? faceImages(card) : [];
+  const faces = cardFaces.length ? cardFaces : scan.image_uri ? [{ name: scan.name, uri: scan.image_uri }] : [];
   const views = [
     ...faces.map((f, i) => ({
       uri: f.uri,
@@ -166,7 +167,7 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
     })),
     ...(scan.photo_uri ? [{ uri: scan.photo_uri, label: 'Your photo', photo: true }] : []),
   ];
-  const current = views[view % views.length];
+  const current = views.length ? views[view % views.length] : null;
 
   const sources = PRICE_SOURCES.filter((s) => prefs.cardPageSources.includes(s.key) || s.key === prefs.priceSource).sort(
     (a, b) => Number(b.key === prefs.priceSource) - Number(a.key === prefs.priceSource),
@@ -186,13 +187,19 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
       {active && <Stack.Screen options={{ title: scan.name }} />}
 
       <Pressable onPress={() => setView((v) => (v + 1) % views.length)} disabled={views.length < 2}>
-        <Image
-          source={{ uri: current.uri }}
-          style={[styles.image, { width: imageWidth }]}
-          contentFit={current.photo ? 'cover' : 'contain'}
-          transition={150}
-        />
-        {views.length > 1 && (
+        {current ? (
+          <Image
+            source={{ uri: current.uri }}
+            style={[styles.image, { width: imageWidth }]}
+            contentFit={current.photo ? 'cover' : 'contain'}
+            transition={150}
+          />
+        ) : (
+          <View style={[styles.image, styles.noImage, { width: imageWidth }]}>
+            <Text style={styles.noImageText}>No picture for this card</Text>
+          </View>
+        )}
+        {current && views.length > 1 && (
           <Text style={styles.caption}>
             {current.label} · tap for {views[(view + 1) % views.length].label.toLowerCase()}
           </Text>
@@ -295,6 +302,8 @@ function CardPage({ id, active }: { id: number; active: boolean }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.bg },
+  noImage: { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface },
+  noImageText: { color: colors.textMuted },
   image: {
     alignSelf: 'center',
     aspectRatio: 63 / 88,
