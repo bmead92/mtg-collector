@@ -426,9 +426,9 @@ With a phone also attached, address the emulator explicitly: `adb -s emulator-55
 
 ## App icon
 
-Original artwork, hand-written SVG (no generated or third-party art): a fanned stack of three card shapes,
-the front one with an art window and two text lines cut out, orange gradient (#ff9a3c → #e5501b) on the
-app background (#0d0d12). `node scripts/make-icons.cjs` renders `assets/icon.png`, `android-icon-*.png`,
+Original artwork, hand-written SVG (no generated or third-party art): a leather spellbook with gold corners
+and clasp, five plain gems in the five colours on a gold ring around a card, on #1b1330 (1.0.2; before that
+a fanned stack of orange cards). Plain circles, not mana symbols. `node scripts/make-icons.cjs` renders `assets/icon.png`, `android-icon-*.png`,
 `favicon.png` and `splash-icon.png` (uses `@resvg/resvg-js`). The adaptive foreground stays within the
 safe zone. After changing icons, run `npx expo prebuild --platform android` (then restore
 `android/local.properties`) so the launcher mipmaps are regenerated. Wizards' logos and symbols (mana,
