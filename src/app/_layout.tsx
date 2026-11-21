@@ -33,7 +33,7 @@ export default function RootLayout() {
         <Stack.Screen name="source/[id]" options={{ title: '' }} />
         <Stack.Screen name="growth" options={{ title: 'Growth' }} />
         <Stack.Screen name="import" options={{ title: 'Import deck' }} />
-        <Stack.Screen name="assign" options={{ title: 'Add to a pack' }} />
+        <Stack.Screen name="history" options={{ title: 'History' }} />
       </Stack>
     </>
   );

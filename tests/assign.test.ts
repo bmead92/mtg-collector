@@ -54,7 +54,7 @@ describe('adding saved cards to a pack', () => {
     await scan(app, pulls, rng);
     await app.stack.saveStack();
 
-    const unsorted = await app.db.listUnsorted();
+    const unsorted = (await app.db.listHistory()).filter((r) => r.source_id == null);
     const [session] = sessionsOf(unsorted);
     expect(session.rows.reduce((n, r) => n + r.copies, 0)).toBe(pulls.length);
 
@@ -62,16 +62,27 @@ describe('adding saved cards to a pack', () => {
     await app.db.assignAdditions(session.rows.map((r) => r.addition_id), id);
 
     expect(await valueOf(app, id)).toEqual({ copies: pulls.length, value: packValue(pulls) });
-    expect(await app.db.listUnsorted()).toHaveLength(0);
+    expect((await app.db.listHistory()).filter((r) => r.source_id == null)).toHaveLength(0);
   });
 
-  it('cards already in a pack are not moved', async () => {
+  it('history shows where each card came from; cards move between packs and back to singles', async () => {
     const rng = seeded(33);
     const app = await launchApp();
     const pulls = openPack(SIM, rng, 'play');
     await scan(app, pulls, rng);
-    await app.stack.saveStack({ kind: 'new', source: pack('Opened') });
-    expect(await app.db.listUnsorted()).toHaveLength(0);
+    await app.stack.saveStack({ kind: 'new', source: pack('Wrong pack') });
+
+    const history = await app.db.listHistory();
+    expect(new Set(history.map((r) => r.source_name))).toEqual(new Set(['Wrong pack']));
+
+    const right = (await app.stack.sourceForTarget({ kind: 'new', source: pack('Right pack') }))!;
+    await app.db.assignAdditions(history.map((r) => r.addition_id), right);
+    expect(await valueOf(app, right)).toEqual({ copies: pulls.length, value: packValue(pulls) });
+
+    await app.db.assignAdditions([history[0].addition_id], null);
+    const after = await app.db.listHistory();
+    expect(after.filter((r) => r.source_id == null)).toHaveLength(1);
+    expect(after.filter((r) => r.source_name === 'Right pack')).toHaveLength(history.length - 1);
   });
 });
 

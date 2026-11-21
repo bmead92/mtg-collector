@@ -1,8 +1,9 @@
 import { Image } from 'expo-image';
 import { router, Stack, useFocusEffect } from 'expo-router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Alert,
+  AppState,
   FlatList,
   Linking,
   Platform,
@@ -15,6 +16,7 @@ import {
   View,
 } from 'react-native';
 import { ActionSheet, type SheetOption } from '../components/ActionSheet';
+import { ToTopButton } from '../components/ToTopButton';
 import { FilterSettingsSheet } from '../components/FilterSettingsSheet';
 import { colors } from '../components/theme';
 import { AUTO_BACKUP_FOLDER, autoBackupAvailable } from '../lib/autoBackup';
@@ -96,6 +98,8 @@ const DEV_SAMPLE_READS: CardGuess[] = [
   { name: null, setCode: 'MOM', collectorNumber: '1', lang: 'ja', foil: false, rawText: '' },
 ];
 
+const TOP_AFTER_MS = 60_000;
+
 export default function Gallery() {
   const stack = useStack();
   const [scans, setScans] = useState<Scan[]>([]);
@@ -139,6 +143,17 @@ export default function Gallery() {
   >(null);
   const [sheetOpen, setSheetOpen] = useState(false);
   const opening = useOpening();
+  const grid = useRef<FlatList<Scan>>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const toTop = useCallback(() => grid.current?.scrollToOffset({ offset: 0, animated: false }), []);
+  useEffect(() => {
+    let leftAt = 0;
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'background') leftAt = Date.now();
+      else if (state === 'active' && leftAt && Date.now() - leftAt >= TOP_AFTER_MS) toTop();
+    });
+    return () => sub.remove();
+  }, [toTop]);
   const { width: winW } = useWindowDimensions();
   const columns = Math.max(2, Math.floor(winW / 200));
   const tileWidth = (winW - 24 - 12 * (columns - 1)) / columns;
@@ -364,9 +379,9 @@ export default function Gallery() {
           },
           {
             icon: '◇',
-            label: 'Add saved cards to a pack',
-            description: 'For cards you saved without picking a pack or box',
-            onPress: () => router.push('/assign'),
+            label: 'History',
+            description: 'Every card you added, by day; add them to a pack',
+            onPress: () => router.push('/history'),
           },
           {
             icon: '⇩',
@@ -667,7 +682,10 @@ export default function Gallery() {
         <SoldView key={restores} header={tabs || undefined} onChange={load} />
       ) : (
       <FlatList
+        ref={grid}
         key={`cols-${columns}`}
+        onScroll={(e) => setScrolled(e.nativeEvent.contentOffset.y > 1500)}
+        scrollEventThrottle={200}
         data={items}
         extraData={prefs} // rows read prefs (rarity badges), so re-render them when prefs change
         keyExtractor={(s) => String(s.id)}
@@ -726,6 +744,10 @@ export default function Gallery() {
           </Pressable>
         )}
       />
+      )}
+
+      {currentTab === 'collection' && scrolled && (
+        <ToTopButton bottom={36} onPress={() => grid.current?.scrollToOffset({ offset: 0, animated: true })} />
       )}
 
       <Pressable style={styles.fab} onPress={() => openSheet({ kind: 'scan' })}>

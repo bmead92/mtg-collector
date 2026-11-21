@@ -879,23 +879,29 @@ export async function listSourceCards(sourceId?: number): Promise<SourceCardRow[
   );
 }
 
-export type UnsortedRow = Scan & { addition_id: number; copies: number; added_at: string };
+export type HistoryRow = Scan & {
+  addition_id: number;
+  copies: number;
+  added_at: string;
+  source_id: number | null;
+  source_name: string | null;
+  source_kind: string | null;
+};
 
-export async function listUnsorted(): Promise<UnsortedRow[]> {
-  return (await db()).getAllAsync<UnsortedRow>(
-    `SELECT s.*, a.id AS addition_id, a.quantity AS copies, a.added_at
-     FROM additions a JOIN scans s ON s.id = a.scan_id
-     WHERE a.source_id IS NULL ORDER BY a.added_at DESC, a.id DESC`,
+export async function listHistory(): Promise<HistoryRow[]> {
+  return (await db()).getAllAsync<HistoryRow>(
+    `SELECT s.*, a.id AS addition_id, a.quantity AS copies, a.added_at, a.source_id,
+            src.name AS source_name, src.kind AS source_kind
+     FROM additions a JOIN scans s ON s.id = a.scan_id LEFT JOIN sources src ON src.id = a.source_id
+     ORDER BY a.added_at DESC, a.id DESC`,
   );
 }
 
-export async function assignAdditions(additionIds: number[], sourceId: number) {
+export async function assignAdditions(additionIds: number[], sourceId: number | null) {
   if (additionIds.length === 0) return;
   const conn = await db();
   await conn.withTransactionAsync(async () => {
-    for (const id of additionIds) {
-      await conn.runAsync('UPDATE additions SET source_id = ? WHERE id = ? AND source_id IS NULL', sourceId, id);
-    }
+    for (const id of additionIds) await conn.runAsync('UPDATE additions SET source_id = ? WHERE id = ?', sourceId, id);
   });
   notifyChange();
 }

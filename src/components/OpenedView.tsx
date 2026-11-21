@@ -167,8 +167,8 @@ export function OpenedView({ priceSource, header }: Props) {
       )}
 
       {!loading && (
-        <Pressable style={styles.addSaved} onPress={() => router.push('/assign')}>
-          <Text style={styles.addSavedText}>Add saved cards to a pack</Text>
+        <Pressable style={styles.addSaved} onPress={() => router.push('/history')}>
+          <Text style={styles.addSavedText}>History: add saved cards to a pack</Text>
         </Pressable>
       )}
     </ScrollView>
