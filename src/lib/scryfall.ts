@@ -152,6 +152,15 @@ export function cardBySetAndNumber(setCode: string, collectorNumber: string, lan
   );
 }
 
+export async function autocompleteNames(q: string): Promise<string[]> {
+  const r = await sfFetch<{ data: string[] }>(`${BASE}/cards/autocomplete?q=${encodeURIComponent(q)}`);
+  return r?.data ?? [];
+}
+
+export function cardByExactName(name: string) {
+  return sfFetch<ScryfallCard>(`${BASE}/cards/named?exact=${encodeURIComponent(name)}`);
+}
+
 export function cardByFuzzyName(name: string) {
   return sfFetch<ScryfallCard>(`${BASE}/cards/named?fuzzy=${encodeURIComponent(name)}`);
 }

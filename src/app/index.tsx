@@ -358,6 +358,12 @@ export default function Gallery() {
               router.push('/scan');
             },
           },
+          {
+            icon: '⌕',
+            label: 'Search by name',
+            description: 'Add a card without the camera',
+            onPress: () => router.push('/add'),
+          },
         ],
       };
     }

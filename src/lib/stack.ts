@@ -293,6 +293,26 @@ async function identifyAndPrice(id: string, guess: CardGuess, hint: CardGuess | 
   });
 }
 
+export function enqueueCard(card: ScryfallCard) {
+  const id = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  items.push({
+    id,
+    number: ++shotCounter,
+    addedAt: Date.now(),
+    status: 'pricing',
+    photoUri: null,
+    guess: null,
+    card: null,
+    method: 'set+number',
+    finish: 'nonfoil',
+    condition: 'NM',
+    single: null,
+    include: true,
+  });
+  emit();
+  void setItemCard(id, card, 'set+number');
+}
+
 export async function setItemCard(id: string, card: ScryfallCard, method: MatchMethod = 'set+number') {
   const current = items.find((it) => it.id === id);
   const finish =
